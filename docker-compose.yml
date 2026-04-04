@@ -8,6 +8,9 @@ services:
   distributedcache:
     image: redis
 
+  orderdb:
+    image: mcr.microsoft.com/mssql/server
+
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
     build:
@@ -20,7 +23,14 @@ services:
       context: .
       dockerfile: src/Services/Basket/Basket.API/Dockerfile
 
+  discount.grpc:
+    image: ${DOCKER_REGISTRY-}discountgrpc
+    build:
+      context: .
+      dockerfile: src/Services/Discount/Discount.Grpc/Dockerfile
+
 volumes:
   postgres_catalog:
   postgres_basket:
+
 
