@@ -2,8 +2,7 @@
 using BuildingBlocks.Behaivors;
 using BuildingBlocks.Exceptions.Handler;
 using Catalog.API.Data;
-using Microsoft.AspNetCore.Diagnostics;
-using static System.Net.Mime.MediaTypeNames;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
